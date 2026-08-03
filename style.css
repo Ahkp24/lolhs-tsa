@@ -1,15 +1,23 @@
+/* Import Fonts: Source Sans 3 & Montserrat (Proxima Nova alternative) */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
 /* Global Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 body {
-    background-color: #0f0f0f;
-    color: #f0f0f0;
+    background-color: #012d52; /* Primary Deep Blue Background */
+    color: #ffffff;            /* White Main Text */
+    font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
     line-height: 1.6;
+}
+
+/* Headings use the Proxima Nova style font */
+h1, h2, h3, h4, h5, h6, .logo {
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 /* Header & Navigation */
@@ -18,8 +26,8 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px 8%;
-    background-color: #141414;
-    border-bottom: 2px solid #cc0000;
+    background-color: #012340; /* Slightly darker shade for header contrast */
+    border-bottom: 3px solid #ed1c24; /* Red Accent Line */
     position: sticky;
     top: 0;
     z-index: 100;
@@ -27,70 +35,79 @@ header {
 
 .logo {
     font-weight: 800;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     color: #ffffff;
     letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 nav a {
-    color: #cccccc;
+    color: #ffffff;
     text-decoration: none;
     margin-left: 20px;
-    font-size: 0.95rem;
-    transition: color 0.2s;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: color 0.2s ease;
 }
 
 nav a:hover {
-    color: #cc0000;
+    color: #ed1c24; /* Red hover accent */
 }
 
 .btn-join {
-    background-color: #cc0000;
-    color: white !important;
-    padding: 8px 16px;
-    border-radius: 4px;
-    font-weight: 600;
+    background-color: #ed1c24; /* Primary Red Accent */
+    color: #ffffff !important;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 700;
+    transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .btn-join:hover {
-    background-color: #e60000;
+    background-color: #c4131a;
+    transform: translateY(-1px);
 }
 
 /* Hero Section */
 .hero {
-    padding: 100px 20px;
+    padding: 110px 20px;
     text-align: center;
-    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), #1a1a1a;
-    border-bottom: 1px solid #222;
+    background: linear-gradient(180deg, #012d52 0%, #001f3a 100%);
+    border-bottom: 2px solid #005daa; /* Secondary Blue Accent */
 }
 
 .hero h1 {
-    font-size: 3rem;
+    font-size: 3.2rem;
+    font-weight: 800;
     margin-bottom: 15px;
     color: #ffffff;
 }
 
 .hero p {
-    font-size: 1.2rem;
-    color: #aaaaaa;
-    max-width: 600px;
-    margin: 0 auto 30px auto;
+    font-size: 1.25rem;
+    color: #e0e6ed;
+    max-width: 650px;
+    margin: 0 auto 35px auto;
 }
 
 /* Buttons */
 .btn-main {
     display: inline-block;
-    background-color: #cc0000;
-    color: white;
-    padding: 12px 28px;
+    background-color: #ed1c24; /* Red Accent */
+    color: #ffffff;
+    padding: 14px 32px;
     border-radius: 6px;
     text-decoration: none;
-    font-weight: bold;
-    transition: background 0.2s;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    box-shadow: 0 4px 14px rgba(237, 28, 36, 0.3);
+    transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .btn-main:hover {
-    background-color: #e60000;
+    background-color: #c4131a;
+    transform: translateY(-2px);
 }
 
 /* Containers & Layout */
@@ -99,7 +116,7 @@ nav a:hover {
 }
 
 .alt-bg {
-    background-color: #141414;
+    background-color: #002342; /* Soft contrast tone for sections */
 }
 
 .text-center {
@@ -107,10 +124,23 @@ nav a:hover {
 }
 
 h2 {
-    font-size: 2rem;
-    margin-bottom: 30px;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 35px;
     text-align: center;
     color: #ffffff;
+    position: relative;
+}
+
+/* Red accent bar under section titles */
+h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 4px;
+    background-color: #ed1c24;
+    margin: 10px auto 0 auto;
+    border-radius: 2px;
 }
 
 /* Cards Grid */
@@ -121,33 +151,36 @@ h2 {
 }
 
 .card {
-    background-color: #1a1a1a;
+    background-color: #001a33;
     padding: 30px;
-    border-radius: 8px;
-    border: 1px solid #262626;
-    transition: transform 0.2s, border-color 0.2s;
+    border-radius: 10px;
+    border: 2px solid #005daa; /* Secondary Blue Accent Border */
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .card:hover {
-    transform: translateY(-3px);
-    border-color: #cc0000;
+    transform: translateY(-4px);
+    border-color: #ed1c24; /* Switches to Red Accent on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 .card h3 {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     color: #ffffff;
+    font-size: 1.3rem;
 }
 
 .card p {
-    color: #999999;
+    color: #d1dbe5;
+    font-size: 1rem;
 }
 
 /* Footer */
 footer {
     text-align: center;
-    padding: 30px;
-    background-color: #0a0a0a;
-    color: #666;
-    font-size: 0.9rem;
-    border-top: 1px solid #222;
+    padding: 35px;
+    background-color: #001529;
+    color: #a0b2c6;
+    font-size: 0.95rem;
+    border-top: 1px solid #005daa;
 }
