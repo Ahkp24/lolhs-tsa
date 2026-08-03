@@ -1,6 +1,6 @@
 /* Import Fonts: Source Sans 3 & Montserrat (Proxima Nova alternative) */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@600;700;800&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&display=swap');
 /* Global Styles */
 * {
     margin: 0;
@@ -254,4 +254,162 @@ footer {
 .back-btn:hover {
     color: #ed1c24;
     transform: translateX(-4px);
+}
+
+/* --- Cinematic Officer Showcase --- */
+.officer-showcase {
+    display: flex;
+    width: 100%;
+    height: 500px; /* Constrained height for a normal webpage */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+}
+
+.officer {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: flex .55s cubic-bezier(.77,0,.18,1);
+    background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(0,0,0,.18));
+    border-left: 1px solid rgba(255,255,255,.15);
+}
+
+.officer:first-child {
+    border-left: none;
+}
+
+.officer.active {
+    flex: 4;
+}
+
+.officer.inactive {
+    flex: .65;
+}
+
+.photo {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center 20%;
+    filter: brightness(.55) grayscale(40%);
+    transition: .45s;
+    z-index: 1;
+}
+
+.officer:hover .photo {
+    filter: brightness(.85) grayscale(0%);
+}
+
+.officer.active .photo {
+    filter: brightness(.45) grayscale(0%);
+}
+
+.white-bar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: #ed1c24; /* Swapped to TSA Red */
+    opacity: 0;
+    transition: .3s;
+    z-index: 2;
+}
+
+.officer:hover .white-bar {
+    opacity: 1;
+}
+
+.officer.active .white-bar {
+    opacity: 0;
+}
+
+.vertical-name {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%) rotate(-90deg);
+    white-space: nowrap;
+    font-family: 'Anton', sans-serif;
+    letter-spacing: 3px;
+    font-size: 1.1rem;
+    color: rgba(255,255,255,.7);
+    transition: .35s;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.officer.active .vertical-name {
+    opacity: 0;
+}
+
+.content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    transition: .35s;
+    pointer-events: none;
+    z-index: 3;
+    transform: translateY(20px);
+}
+
+.officer.active .content {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.title-panel {
+    background: rgba(1, 45, 82, 0.95); /* TSA Dark Blue */
+    padding: 20px;
+    border-top: 3px solid #ed1c24;
+}
+
+.title-panel .name {
+    font-family: 'Anton', sans-serif;
+    color: white;
+    font-size: 2rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.title-panel .role {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    margin-top: 5px;
+    font-size: 0.85rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #ed1c24; /* Red accent */
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: #ed1c24;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    opacity: 0;
+    transition: .3s;
+    z-index: 4;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.officer.active .close {
+    opacity: 1;
 }
