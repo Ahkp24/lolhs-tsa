@@ -26,11 +26,43 @@ const eventData = {
         {
             name: "Architectural Design",
             type: "Team",
-            firstRound: "Preliminary portfolio review.",
-            finalRound: "On-site presentation of model.",
+            firstRound: "Preliminary model & portfolio documentation.",
+            finalRound: "On-site presentation and interview of model.",
             deliverables: "Physical model and digital portfolio.",
-            link: "https://tsaweb.org/events"
-        }
+            link: "https://alolhs.github.io/lolhstsacompetitiveguidelines/TSA%20Competitive%20Guidelines.pdf#page=27"
+        },
+        {
+            name: "CAD Architecture",
+            type: "Solo",
+            firstRound: "Setup & test computer equipment with advisor, then 3 hour work session to solve the RESIDENTIAL problem.",
+            finalRound: "On-site presentation and interview of solution.",
+            deliverables: "The CAD solution.",
+            link: "https://alolhs.github.io/lolhstsacompetitiveguidelines/TSA%20Competitive%20Guidelines.pdf#page=81"
+        },
+        {
+            name: "CAD Engineering",
+            type: "Solo",
+            firstRound: "Setup & test computer equipment with advisor, then 3 hour work session to solve the INDUSTRIAL problem.",
+            finalRound: "On-site presentation and interview of solution.",
+            deliverables: "The CAD solution.",
+            link: "https://alolhs.github.io/lolhstsacompetitiveguidelines/TSA%20Competitive%20Guidelines.pdf#page=87"
+        },
+        {
+            name: "Geospatial Technology",
+            type: "Duo/Trio",
+            firstRound: "Prejudged portfolio of data, documentation, and maps.",
+            finalRound: "On-site presentation and interview.",
+            deliverables: "The portfolio of data and the infographic map.",
+            link: "https://alolhs.github.io/lolhstsacompetitiveguidelines/TSA%20Competitive%20Guidelines.pdf#page=167"
+        },
+        {
+            name: "Structural Design & Engineering",
+            type: "Duo/Trio",
+            firstRound: "Prejudged Portfolio + Model to be tested in destruction.",
+            finalRound: "Final Round Construction to build a design to solve a problem based on drawings.",
+            deliverables: "The portfolio and construction.",
+            link: "https://alolhs.github.io/lolhstsacompetitiveguidelines/TSA%20Competitive%20Guidelines.pdf#page=235"
+        },
     ],
 
     'Communications Tech': [], // Add your event blocks inside the brackets!
