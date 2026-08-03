@@ -184,3 +184,74 @@ footer {
     font-size: 0.95rem;
     border-top: 1px solid #005daa;
 }
+
+/* --- New Event Page Specific Styles --- */
+
+/* Utility Classes for JS toggling */
+.hidden {
+    display: none !important;
+}
+
+.fade-enter {
+    animation: fadeIn 0.4s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Category Card Click State */
+.category-card {
+    cursor: pointer;
+}
+
+/* The Red Accent Tag */
+.tag-red {
+    display: inline-block;
+    background-color: #ed1c24;
+    color: #ffffff;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+/* Event Specific Details (Bullet Points) */
+.event-details p {
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    line-height: 1.4;
+    color: #d1dbe5;
+}
+
+.event-details strong {
+    color: #ffffff;
+}
+
+/* Back Button */
+.back-btn {
+    background: none;
+    border: none;
+    color: #005daa;
+    font-size: 1.1rem;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    margin-bottom: 25px;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.back-btn:hover {
+    color: #ed1c24;
+    transform: translateX(-4px);
+}
