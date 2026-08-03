@@ -1,6 +1,6 @@
-/* Import Fonts: Source Sans 3 & Montserrat (Proxima Nova alternative) */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+/* Import Fonts: Source Sans 3, Montserrat, and Anton */
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@600;700;800&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
 /* Global Styles */
 * {
     margin: 0;
@@ -260,7 +260,7 @@ footer {
 .officer-showcase {
     display: flex;
     width: 100%;
-    height: 500px; /* Constrained height for a normal webpage */
+    height: 85vh; /* 85% of the screen height */
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 15px 35px rgba(0,0,0,0.5);
@@ -280,7 +280,8 @@ footer {
     border-left: none;
 }
 
-.officer.active {
+/* Expand on Hover OR Click */
+.officer:hover, .officer.active {
     flex: 4;
 }
 
@@ -298,11 +299,8 @@ footer {
     z-index: 1;
 }
 
-.officer:hover .photo {
-    filter: brightness(.85) grayscale(0%);
-}
-
-.officer.active .photo {
+/* Adjust photo brightness when expanded */
+.officer:hover .photo, .officer.active .photo {
     filter: brightness(.45) grayscale(0%);
 }
 
@@ -318,11 +316,8 @@ footer {
     z-index: 2;
 }
 
-.officer:hover .white-bar {
-    opacity: 1;
-}
-
-.officer.active .white-bar {
+/* Hide the red bar when expanded */
+.officer:hover .white-bar, .officer.active .white-bar {
     opacity: 0;
 }
 
@@ -341,7 +336,8 @@ footer {
     z-index: 2;
 }
 
-.officer.active .vertical-name {
+/* Hide the vertical role text when expanded */
+.officer:hover .vertical-name, .officer.active .vertical-name {
     opacity: 0;
 }
 
@@ -357,7 +353,8 @@ footer {
     transform: translateY(20px);
 }
 
-.officer.active .content {
+/* Reveal the Name/Role panel when expanded */
+.officer:hover .content, .officer.active .content {
     opacity: 1;
     pointer-events: auto;
     transform: translateY(0);
